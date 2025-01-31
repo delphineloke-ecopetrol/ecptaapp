@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import datetime as dt
 
-ta_database_path = r"data\ta_database.csv"
-daily_ta_path = r"data\daily_ta.csv"
+ta_database_path = "data/ta_database.csv"
+daily_ta_path = "data/daily_ta.csv"
 
 ta_database = pd.read_csv(ta_database_path).sort_values(by=["start_date", "end_date"], ascending=[False, False])
 ta_database['start_date'] = pd.to_datetime(ta_database['start_date'], format='mixed').dt.date
