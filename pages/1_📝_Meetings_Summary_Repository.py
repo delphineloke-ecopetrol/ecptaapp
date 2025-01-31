@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 root_start_path = pathlib.Path.home()
-file_path = r"\data\summaries.csv"
+file_path = r"data\summaries.csv"
 csv_path = os.path.join(root_start_path, file_path)
 
 df = pd.read_csv(csv_path)
