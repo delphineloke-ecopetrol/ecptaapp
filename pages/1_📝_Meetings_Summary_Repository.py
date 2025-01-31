@@ -3,9 +3,7 @@ import streamlit as st
 import pandas as pd
 import os
 
-root_start_path = pathlib.Path.home()
-file_path = r"data\summaries.csv"
-csv_path = os.path.join(root_start_path, file_path)
+csv_path = "data/summaries.csv"
 
 df = pd.read_csv(csv_path)
 df['Date'] = pd.to_datetime(df['Date'], format='mixed').dt.date
