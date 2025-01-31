@@ -43,7 +43,6 @@ st.title("Turnarounds Database 🏭")
 st.write(" ### Create, update and delete refinery turnaround entries here!")
 
 # Display DataFrame (optional)
-st.write("Initial Database")
 st.dataframe(ta_database)
 
 st.subheader("Search by Refinery")
@@ -78,7 +77,10 @@ if option == "Create New":
         entries_df = pd.DataFrame(entries, columns=['Outage ID', 'Platts Outage ID', 'ECPTA ID', 'Name', 'Country', 'Planning Status', 'start_date', 'end_date',
                                                                           'Volume', 'Edited'])
         if new_end_date >= new_start_date:
-            st.dataframe(entries_df)   
+            filtered_grouped = ta_database[(ta_database['Name'] == refinery_name)]
+            filtered_grouped = filtered_grouped.sort_values(by=['start_date', 'end_date', 'Outage ID', 'Edited'], ascending=[ False, False, True, False])
+            st.dataframe(filtered_grouped)
+  
             ta_database = pd.concat([ta_database, entries_df])  
             st.success("Entry successfully inserted into Database!")
 
