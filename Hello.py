@@ -26,7 +26,10 @@ for page, description in toc.items():
 
 st.subheader("📊 PBI Dashboards")
 dashboards = {
-    "China Import Quotas": "https://app.powerbi.com/groups/me/reports/23f1a450-6e36-4852-bdc1-007ce1ee5289/9832c9e64ef03074b9f2?experience=power-bi"
+    "China Import Quotas": "https://app.powerbi.com/groups/me/reports/23f1a450-6e36-4852-bdc1-007ce1ee5289/9832c9e64ef03074b9f2?experience=power-bi",
+    "China Analysis": "https://app.powerbi.com/groups/c1094db0-3d43-4a63-b304-e94a99943ade/reports/887722ee-b3f3-4550-8498-0adb065b3d9a?experience=power-bi",
+    "India Analysis": "https://app.powerbi.com/groups/c1094db0-3d43-4a63-b304-e94a99943ade/reports/5bcc71e0-b21c-41d1-b093-367b9cd7439e?experience=power-bi",
+    "Global Refinery Database": "Publishing"
 }
 
 for name, link in dashboards.items():

@@ -53,7 +53,6 @@ elif option == "Create New":
     new_date = st.date_input("Date:")
     new_counterparty = st.text_input("Enter Counterparty Name:")
     summary = st.text_area("Meeting Summary:")
-    st.write("Add new Attendee")
 
     name = st.text_input("Enter Counterparty Attendees:", key="namewidget")
     designation = st.text_input("Enter Counterparty Designations:", key="designationwidget")
@@ -81,6 +80,7 @@ elif option == "Create New":
         df.to_csv(csv_path, index=False)
         st.success("Successfully added new entry!")
         st.dataframe(df)
+        st.session_state.attendees = []
  
 elif option == "Update Existing":
     summ_id = st.number_input("Enter Summary ID to edit", step=1, value=None)
